@@ -1,4 +1,7 @@
-T0 P0 ;
-T1 P1 ;
-T2 P2 ;
-T3 P3 ;
+T0 P0 ; 
+T1 P1 D3.000000 Z+34.221600 ;otowry 
+T2 P2 D6.000000 Z+90.555161 ;pozytywowy 
+T3 P3 D10.000000 Z+93.308817 ;diament zgrubny 
+T4 P4 D10.000000 Z+41.046257 ;wykańczający 
+T5 P0 D8.000000 Z+89.105844 ;kompresyjny 
+T6 P0 D8.000000 Z+57.245300 ;wykańczający dwa pióra 
