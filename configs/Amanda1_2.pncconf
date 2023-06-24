@@ -4469,7 +4469,7 @@
   <property name="zstepscale" type="float" value="210.4469"/>
   <property name="zstepspace" type="float" value="5000.0"/>
   <property name="zsteptime" type="float" value="5000.0"/>
-  <property name="zusebacklash" type="bool" value="True"/>
-  <property name="zusecomp" type="bool" value="True"/>
+  <property name="zusebacklash" type="bool" value="False"/>
+  <property name="zusecomp" type="bool" value="False"/>
   <property name="zusehomeindex" type="int" value="0"/>
 </pncconf>
