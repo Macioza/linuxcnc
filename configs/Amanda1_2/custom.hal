@@ -1,2 +1,43 @@
 # Include your custom HAL commands here
 # This file will not be overwritten when you run PNCconf again
+
+#VFD
+
+loadrt near names=near.speed
+addf near.speed servo-thread
+
+net spindle-cw classicladder.0.in-00 <= hm2_7i76e.0.7i76.0.0.output-00
+#net spindle-ccw classicladder.0.in-01 <= motion.spindle-forward 
+#net spindle-start classicladder.0.in-02 <= motion.spindle-reverse 
+
+net spindle-cmd-rpm-abs => classicladder.0.floatin-01
+
+#czeka na osiagniecie obrotow zadanych
+# Set motion.spindle-at-speed
+
+net spindle-cmd-rpm-abs near.speed.in1
+
+net spindle-speed-in classicladder.0.floatout-02 => near.speed.in2
+
+setp near.speed.scale 1.05
+
+net spindle-at-speed <= near.speed.out 
+#------
+
+net cycle-start hm2_7i76e.0.7i76.0.0.input-09 => halui.program.run hm2_7i76e.0.7i76.0.0.output-15
+net cycle-stop hm2_7i76e.0.7i76.0.0.input-10 => halui.program.stop 
+net dout-00 motion.digital-out-00 => hm2_7i76e.0.7i76.0.0.output-07
+net coolant-flood => hm2_7i76e.0.7i76.0.0.output-09 #włącz gniazdo odkurzacza
+#net spindle-enable => hm2_7i76e.0.7i76.0.0.output-08 
+net sonda hm2_7i76e.0.7i76.0.0.input-11-not => motion.probe-input
+
+#  ---pompa chłodziwa---
+loadrt timedelay count=1
+addf timedelay.0 servo-thread
+setp timedelay.0.on-delay 2
+setp timedelay.0.off-delay 30
+net spindle-enable => timedelay.0.in
+net opoznienie timedelay.0.out => hm2_7i76e.0.7i76.0.0.output-08
+
+#spindle-enable i coolant-flood to sygnały zdefiniowane w głownym pliku .hal tworzonym przezez PNCconf
+#There can only be one OUT pin per signal, but you can connect any number of IN pins

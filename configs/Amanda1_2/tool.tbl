@@ -1,7 +1,8 @@
-T0 P0 ; 
-T1 P1 D3.000000 Z-28.893104 ;otowry 
-T2 P2 D6.000000 Z-16.015040 ;pozytywowy 
-T3 P3 D10.000000 Z-12.852304 ;diament zgrubny 
-T4 P4 D10.000000 Z-22.663985 ;wykańczający 
-T5 P0 D8.000000 Z-15.986818 ;kompresyjny 
-T6 P0 D8.000000 Z-14.784216 ;wykańczający dwa pióra 
+T0 P0 Z+190.739000 ;tulejka ER20 bez narzedzia 
+T1 P1 D3.000000 Z+29.065290 ;otwory 
+T2 P2 D6.000000 Z+38.014600 ;pozytywowy 
+T3 P3 D10.000000 Z+41.301890 ;diament zgrubny 
+T4 P4 D8.000000 Z+40.575990 ;3D 
+T5 P0 D8.000000 Z+43.033680 ;lamacz wiora 
+T6 P0 D8.000000 Z+46.061720 ;wykańczający dwa pióra 
+T7 P0 D8.000000 Z+31.274100 ;fazownik 90 stopni 

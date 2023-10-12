@@ -119,7 +119,7 @@
   <property name="cbmotor_worm" type="string" value="63619"/>
   <property name="centerembededgvcp" type="bool" value="True"/>
   <property name="cl_haluicmds" type="int" value="0"/>
-  <property name="classicladder" type="bool" value="False"/>
+  <property name="classicladder" type="bool" value="True"/>
   <property name="createshortcut" type="bool" value="False"/>
   <property name="createsymlink" type="bool" value="False"/>
   <property name="customhal" type="bool" value="False"/>
@@ -172,7 +172,7 @@
   <property name="geometry" type="string" value="xyz"/>
   <property name="gladeexists" type="bool" value="False"/>
   <property name="gladesample" type="bool" value="True"/>
-  <property name="gladevcp" type="bool" value="True"/>
+  <property name="gladevcp" type="bool" value="False"/>
   <property name="gladevcpforcemax" type="bool" value="False"/>
   <property name="gladevcphaluicmds" type="int" value="0"/>
   <property name="gladevcpheight" type="float" value="0.0"/>
@@ -187,7 +187,7 @@
   <property name="gs2_vfd_accel" type="float" value="10.0"/>
   <property name="gs2_vfd_baud" type="int" value="9600"/>
   <property name="gs2_vfd_deaccel" type="float" value="0.0"/>
-  <property name="gs2_vfd_port" type="string" value="/dev/ttyS0"/>
+  <property name="gs2_vfd_port" type="string" value="/dev/ttyACM0"/>
   <property name="gs2_vfd_slave" type="float" value="1.0"/>
   <property name="gsdebounce" type="bool" value="True"/>
   <property name="gsdebouncetime" type="float" value="0.2"/>
@@ -273,7 +273,7 @@
   <property name="joystickjograpidrate2" type="float" value="10.0"/>
   <property name="joystickjograpidrate3" type="float" value="100.0"/>
   <property name="ladderconnect" type="bool" value="True"/>
-  <property name="ladderexist" type="bool" value="False"/>
+  <property name="ladderexist" type="bool" value="True"/>
   <property name="ladderhaltype" type="int" value="0"/>
   <property name="laddername" type="string" value="custom.clp"/>
   <property name="laddertouchz" type="bool" value="False"/>
@@ -964,10 +964,10 @@
   <property name="mesa0sserial0_0pin10" type="string" value="unused-input"/>
   <property name="mesa0sserial0_0pin10inv" type="bool" value="False"/>
   <property name="mesa0sserial0_0pin10type" type="string" value="GPIO Input"/>
-  <property name="mesa0sserial0_0pin11" type="string" value="cycle-start"/>
+  <property name="mesa0sserial0_0pin11" type="string" value="unused-input"/>
   <property name="mesa0sserial0_0pin11inv" type="bool" value="False"/>
   <property name="mesa0sserial0_0pin11type" type="string" value="GPIO Input"/>
-  <property name="mesa0sserial0_0pin12" type="string" value="abort"/>
+  <property name="mesa0sserial0_0pin12" type="string" value="unused-input"/>
   <property name="mesa0sserial0_0pin12inv" type="bool" value="False"/>
   <property name="mesa0sserial0_0pin12type" type="string" value="GPIO Input"/>
   <property name="mesa0sserial0_0pin13" type="string" value="unused-input"/>
@@ -985,7 +985,7 @@
   <property name="mesa0sserial0_0pin17" type="string" value="unused-output"/>
   <property name="mesa0sserial0_0pin17inv" type="bool" value="False"/>
   <property name="mesa0sserial0_0pin17type" type="string" value="GPIO Output"/>
-  <property name="mesa0sserial0_0pin18" type="string" value="unused-output"/>
+  <property name="mesa0sserial0_0pin18" type="string" value="coolant-flood"/>
   <property name="mesa0sserial0_0pin18inv" type="bool" value="False"/>
   <property name="mesa0sserial0_0pin18type" type="string" value="GPIO Output"/>
   <property name="mesa0sserial0_0pin19" type="string" value="unused-output"/>
@@ -997,13 +997,13 @@
   <property name="mesa0sserial0_0pin20" type="string" value="unused-output"/>
   <property name="mesa0sserial0_0pin20inv" type="bool" value="False"/>
   <property name="mesa0sserial0_0pin20type" type="string" value="GPIO Output"/>
-  <property name="mesa0sserial0_0pin21" type="string" value="coolant-flood"/>
+  <property name="mesa0sserial0_0pin21" type="string" value="coolant-mist"/>
   <property name="mesa0sserial0_0pin21inv" type="bool" value="False"/>
   <property name="mesa0sserial0_0pin21type" type="string" value="GPIO Output"/>
   <property name="mesa0sserial0_0pin22" type="string" value="unused-output"/>
   <property name="mesa0sserial0_0pin22inv" type="bool" value="False"/>
   <property name="mesa0sserial0_0pin22type" type="string" value="GPIO Output"/>
-  <property name="mesa0sserial0_0pin23" type="string" value="unused-output"/>
+  <property name="mesa0sserial0_0pin23" type="string" value="dout-00"/>
   <property name="mesa0sserial0_0pin23inv" type="bool" value="False"/>
   <property name="mesa0sserial0_0pin23type" type="string" value="GPIO Output"/>
   <property name="mesa0sserial0_0pin24" type="string" value="unused-input"/>
@@ -1060,7 +1060,7 @@
   <property name="mesa0sserial0_0pin3inv" type="bool" value="False"/>
   <property name="mesa0sserial0_0pin3type" type="string" value="GPIO Input"/>
   <property name="mesa0sserial0_0pin4" type="string" value="both-home-x"/>
-  <property name="mesa0sserial0_0pin40" type="string" value="coolant-mist"/>
+  <property name="mesa0sserial0_0pin40" type="string" value="unused-output"/>
   <property name="mesa0sserial0_0pin40inv" type="bool" value="False"/>
   <property name="mesa0sserial0_0pin40type" type="string" value="GPIO Output"/>
   <property name="mesa0sserial0_0pin41" type="string" value="unused-output"/>
@@ -3804,7 +3804,7 @@
   <property name="mitsub_vfd_feedback_scale" type="int" value="1"/>
   <property name="mitsub_vfd_id" type="string" value="('spindle_vfd', 1)"/>
   <property name="mitsub_vfd_port" type="string" value="/dev/ttyS0"/>
-  <property name="modbus" type="bool" value="False"/>
+  <property name="modbus" type="bool" value="True"/>
   <property name="motor_gear1driven" type="string" value="63601"/>
   <property name="motor_gear1driver" type="string" value="63602"/>
   <property name="motor_gear2driven" type="string" value="63603"/>
@@ -3838,6 +3838,7 @@
   <property name="mpgincrvalue9" type="float" value="0.125"/>
   <property name="multijogbuttons" type="bool" value="False"/>
   <property name="multimpg" type="bool" value="False"/>
+  <property name="mux16names" type="string" value=""/>
   <property name="mvo_usempg" type="bool" value="False"/>
   <property name="mvo_useswitch" type="bool" value="True"/>
   <property name="mvodebounce" type="bool" value="True"/>
@@ -4080,6 +4081,7 @@
   <property name="sbldc_use_encoder" type="bool" value="False"/>
   <property name="sbldc_use_hall" type="bool" value="True"/>
   <property name="sbldc_use_index" type="bool" value="False"/>
+  <property name="scalenames" type="eval" value="[]"/>
   <property name="scaleselect" type="bool" value="False"/>
   <property name="scbmicrosteps" type="bool" value="False"/>
   <property name="scbmotor_gear1" type="bool" value="False"/>
@@ -4163,7 +4165,7 @@
   <property name="susecomp" type="int" value="0"/>
   <property name="susehomeindex" type="int" value="0"/>
   <property name="susenearrange" type="bool" value="True"/>
-  <property name="susenegativevoltage" type="bool" value="True"/>
+  <property name="susenegativevoltage" type="bool" value="False"/>
   <property name="suseoutputrange2" type="bool" value="False"/>
   <property name="tempexists" type="int" value="0"/>
   <property name="toolchangeprompt" type="bool" value="True"/>
