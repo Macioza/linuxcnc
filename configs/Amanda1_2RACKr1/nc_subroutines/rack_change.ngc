@@ -1,0 +1,47 @@
+
+o<rack_change> sub
+
+o100 if [#<_current_pocket> EQ 1]
+     G53 G1 Z0 F5000
+     G53 G1 X1300 Y1100 F30000
+     G53 G1 Z-100 F5000
+o100 endif
+
+o101 if [#<_current_pocket> EQ 2]
+     G53 G1 Z0 F5000
+     G53 G1 X1300 Y1000 F30000
+     G53 G1 Z-100 F5000
+o101 endif
+
+o102 if [#<_current_pocket> EQ 3]
+     G53 G1 Z0 F5000
+     G53 G1 X1300 Y900 F30000
+     G53 G1 Z-100 F5000
+o102 endif
+
+o103 if [#<_current_pocket> EQ 4]
+     G53 G1 Z0 F5000
+     G53 G1 X1300 Y800 F30000
+     G53 G1 Z-100 F5000
+o103 endif
+
+o104 if [#<_current_pocket> EQ 5]
+     G53 G1 Z0 F5000
+     G53 G1 X1300 Y700 F30000
+     G53 G1 Z-100 F5000
+o104 endif
+
+o105 if [#<_current_pocket> EQ 6]
+     G53 G1 Z0 F5000
+     G53 G1 X1300 Y600 F30000
+     G53 G1 Z-100 F5000
+o105 endif
+
+o106 if [#<_current_pocket> EQ 7]
+     G53 G1 Z0 F5000
+     G53 G1 X1300 Y300 F30000
+     G53 G1 Z-100 F5000
+o106 endif
+
+o<rack_change> endsub [1]
+m2

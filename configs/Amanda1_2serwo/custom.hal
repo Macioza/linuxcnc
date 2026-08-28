@@ -1,0 +1,62 @@
+# Include your custom HAL commands here
+# This file will not be overwritten when you run PNCconf again
+
+loadrt timedelay count=2
+loadrt and2 count=3
+
+# ---VFD---
+net spindle-cw classicladder.0.in-00 <= hm2_7i76e.0.7i76.0.0.output-00
+
+#---wyjścia/wejścia---
+net cycle-start hm2_7i76e.0.7i76.0.0.input-09 => halui.program.run
+net cycle-stop hm2_7i76e.0.7i76.0.0.input-10 => halui.program.stop 
+net dout-00 motion.digital-out-00 => hm2_7i76e.0.7i76.0.0.output-07
+net coolant-flood => hm2_7i76e.0.7i76.0.0.output-09 #włącz gniazdo odkurzacza
+#net spindle-enable => hm2_7i76e.0.7i76.0.0.output-08 
+delsig probe-in 
+net sonda motion.probe-input => hm2_7i76e.0.7i76.0.0.input-11-not 
+net niebieskiPrzycisk hm2_7i76e.0.7i76.0.0.input-27 => classicladder.0.in-01
+net silownikiIndeksujace classicladder.0.out-00 => hm2_7i76e.0.7i76.0.0.output-03
+
+#---pompa chłodziwa---
+addf timedelay.0 servo-thread
+setp timedelay.0.on-delay 2
+setp timedelay.0.off-delay 30
+net spindle-enable => timedelay.0.in
+net opoznienie timedelay.0.out => hm2_7i76e.0.7i76.0.0.output-08
+
+#---serwa---
+net machine-is-enabled => hm2_7i76e.0.7i76.0.0.output-15 #sygnał enable do sterowników
+net awariaX1 <= hm2_7i76e.0.7i76.0.0.input-20-not
+net awariaX2 <= hm2_7i76e.0.7i76.0.0.input-21-not
+net awariaY <= hm2_7i76e.0.7i76.0.0.input-22-not
+
+addf timedelay.1 servo-thread
+setp timedelay.1.on-delay 0.5
+net machine-is-enabled => timedelay.1.in
+net delayed-machine-enable <= timedelay.1.out #opóźniony sygnał machine enable
+
+addf and2.0 servo-thread
+net delayed-machine-enable => and2.0.in0
+net awariaX1 => and2.0.in1
+net faultX1 and2.0.out #najpierw jest zwykły (nie-opźniony machine-enable a później sprawdza sygnał fault)
+net faultX1 => joint.0.amp-fault-in
+
+addf and2.1 servo-thread
+net delayed-machine-enable => and2.1.in0
+net awariaX2 => and2.1.in1
+net faultX2 and2.1.out
+net faultX2 => joint.1.amp-fault-in
+
+addf and2.2 servo-thread
+net delayed-machine-enable => and2.2.in0
+net awariaY => and2.2.in1
+net faultY and2.2.out
+net faultY => joint.2.amp-fault-in
+
+
+
+
+#spindle-enable, coolant-flood, machine-is-enabled to sygnały zdefiniowane w głownym pliku .hal tworzonym przezez PNCconf
+#There can only be one OUT pin per signal, but you can connect any number of IN pins
+#Moze być jedno wyjście na sygnał, a wejśc moze być dowolna ilość.

@@ -1,0 +1,10 @@
+T0 P0 Z+190.739000 ;tulejka ER20 bez narzedzia 
+T1 P1 D3.000000 Z-60.515500 ;otwory 
+T2 P2 D6.000000 Z-59.844000 ;pozytywowy 
+T3 P3 D10.000000 Z-57.914500 ;diament zgrubny 
+T4 P4 D8.000000 Z-64.808000 ;3D 
+T5 P0 D8.000000 Z-61.119000 ;lamacz wiora 
+T7 P0 D8.000000 Z-68.922000 ;fazownik 90 stopni 
+T8 P8 D4.000000 Z-61.102000 ;do aluminium 
+T9 P0 Z-66.746000 ;krotki diament 
+T6 P0 Z-55.245500 ;wykanczajacy do sklejki 
